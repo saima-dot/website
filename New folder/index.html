@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SpongeBob FUN Song</title>
+
+    <style>
+        body {
+            background-color: purple;
+            color: white;
+            text-align: center;
+            font-family: Verdana, sans-serif;
+        }
+
+        h1 {
+            font-size: 40px;
+        }
+
+        #box {
+            width: 80px;
+            height: 80px;
+            background-color: yellow;
+            position: relative;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>SpongeBob - The FUN Song 🎶</h1>
+
+    <!-- YouTube Video -->
+    <iframe width="560" height="315"
+        src="https://www.youtube.com/embed/jkdYgS6Yp7k"
+        frameborder="0" allowfullscreen>
+    </iframe>
+
+    <h2>Click to bounce!</h2>
+
+    <div id="box"></div>
+
+    <button onclick="bounceBox()">Start Animation</button>
+
+    <script>
+        function bounceBox() {
+            var box = document.getElementById("box");
+            var position = 0;
+            var direction = 1;
+
+            setInterval(function () {
+                if (position >= 200) {
+                    direction = -1;
+                }
+                if (position <= 0) {
+                    direction = 1;
+                }
+
+                position += direction;
+                box.style.top = position + "px";
+            }, 5);
+        }
+    </script>
+
+</body>
+</html>
